@@ -52,7 +52,7 @@ export default function Experiences() {
         {/*Map container
 	  */}
         <div className="border-2 border-primary mb-[20px] rounded-lg md:w-[50%]">
-          <iframe className="h-[50vh] md:h-[60vh] md:w-[100%] rounded-lg" id="gmap_canvas" src="https://maps.google.com/maps?q=Rua%20Vitorino%20Grassi%2053%20-%20Jardim%20Santa%20Rita,%20Itapevi%20-%20SP&t=&z=15&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0">
+          <iframe className="h-[50vh] md:h-[60vh] md:w-[100%] rounded-lg" id="gmap_canvas" src="https://maps.google.com/maps?q=Rua%20Vitorino%20Grassi%2053%20-%20Jardim%20Santa%20Rita,%20Itapevi%20-%20SP&t=&z=15&ie=UTF8&iwloc=&output=embed" frameBorder="0" scrolling="no" marginHeight={0} marginWidth={0}>
 
           </iframe>
         </div>

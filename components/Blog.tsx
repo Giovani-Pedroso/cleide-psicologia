@@ -10,9 +10,11 @@ export default function Hero() {
       <h1 className="text-[48px] font-[600] text-primary mb-6">Blog</h1>
       <div className="flex flex-col md:flex-row justify-between mb-[30px]">
         {
-          articles.map(article => {
+          articles.map((article: any) => {
             return (
-              <Card title={article.titulo} content={article.content} />
+              <Card title={article.titulo}
+	      key={article.titulo}
+	      content={article.content} />
             )
           })
         }

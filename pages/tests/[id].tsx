@@ -1,9 +1,10 @@
+/*
 import { useState, useEffect } from 'react'
 import Header from '../../components/HeaderTest'
 import QuestionRange from '../../components/QuestionsRange'
 import Modal from '../../components/Model'
 import axios from 'axios'
-import { useRouter, push as Redirect } from "next/router";
+import { useRouter, Redirect } from "next/router";
 import ReactLoading from 'react-loading';
 
 import { TestsFrom } from '../../data/testsFroms'
@@ -26,13 +27,13 @@ export default function Id() {
   const id = router.query.id
 
   const [test, setTest] = useState<ITest | null>(null)
-  const [searching, setSearching] = useState(true)
+  //const [searching, setSearching] = useState(true)
   const [isModalVisible, setIsModalVisible] = useState(false)
 
   useEffect(() => {
     const getTest = async () => {
       const response = await axios.get(`${url}/a-test/${id}`)
-      const data = response.data.data
+      const data: any = response.data.data
 
       console.log('url: ', `${url}/${id}`)
       console.log('response', response)
@@ -76,63 +77,76 @@ export default function Id() {
       }
     }
 
+    /*
     const body = {
-      pacienteId,
-      testId: id,
-      testName: test.nome,
-      anwsers: ans
+    pacienteId,
+    testId: id,
+  testName: test.nome,
+  anwsers: ans
     }
-    setIsModalVisible(true)
+ */
+/*
+setIsModalVisible(true)
     //console.log(body)
     //const res = await axios.post(`${url}/answer-test`, body)
     //console.log(res)
   }
 
-  const questions = () => {
-    if (test == null) return
-    return test.questions.map((question, index) => {
+const questions = () => {
+  if (test == null) return
+  return test.questions.map((question, index) => {
 
-      return (
-        <QuestionRange
-          initLevel={test.initLevel}
-          key={index}
-          id={index}
-          finalLevel={test.finalLevel}
-          setAns={Ans}
-          question={question}
-          levels={test.levels} />
-      )
-    }
+    return (
+      <QuestionRange
+        initLevel={test.initLevel}
+        key={index}
+        id={index}
+        finalLevel={test.finalLevel}
+        setAns={Ans}
+        question={question}
+        levels={test.levels} />
     )
   }
+  )
+}
 
-  return (
-    <div>
-      <Header title={test.nome} instrucoes={test.instrucoes} />
-      <div className="px-[5%]">
-        {
-          questions()
-        }
+return (
+  <div>
+    <Header title={test.nome} instrucoes={test.instrucoes} />
+    <div className="px-[5%]">
+      {
+        questions()
+      }
 
-        <button className="p-2 mt-6 font-[400] text-white bg-card"
-          onClick={() => handleResult()}>
-          Finalizar test
+      <button className="p-2 mt-6 font-[400] text-white bg-card"
+        onClick={() => handleResult()}>
+        Finalizar test
+      </button>
+    </div>
+
+    <Modal visible={isModalVisible}>
+      <div className="flex flex-col max-w-[80%]">
+        <h1 className="text-[34px] text-primary mb-4">O Resultado foi encamilhado para o psicologo
+        </h1>
+        <button className="p-2 mt-6 font-[400] text-white bg-card w-[180px]"
+          onClick={() => {
+            console.log('aaaa')
+            Redirect('../../')
+          }}>
+          Sair
         </button>
       </div>
+    </Modal>
+  </div>
+)
+}
+*/
 
-      <Modal visible={isModalVisible}>
-        <div className="flex flex-col max-w-[80%]">
-          <h1 className="text-[34px] text-primary mb-4">O Resultado foi encamilhado para o psicologo
-          </h1>
-          <button className="p-2 mt-6 font-[400] text-white bg-card w-[180px]"
-            onClick={() => {
-              console.log('aaaa')
-              Redirect('../../')
-            }}>
-            Sair
-          </button>
-        </div>
-      </Modal>
+
+export default function Id() {
+  return (
+    <div>
+      aaaa
     </div>
   )
 }

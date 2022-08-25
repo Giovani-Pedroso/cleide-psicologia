@@ -1,6 +1,12 @@
 import Link from 'next/link'
 
-export default function Card(props) {
+type Props = {
+  title:string
+  content:string
+}
+
+
+export default function Card(props:Props) {
   return (
     <article className=" flex flex-col justify-between mb-[40px] md:max-w-[30%] rounded-l font-semibold mb-4">
       <h1 className="text-[24px] text-primary font-[400] mb-4">{props.title}</h1>
