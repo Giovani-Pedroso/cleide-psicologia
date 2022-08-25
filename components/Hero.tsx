@@ -1,8 +1,11 @@
 import Link from 'next/link'
+
+
 export default function Hero() {
 
   return (
-    <header className="flex  text-right  flex-row-reverse h-screen bg-hero bg-no-repeat bg-cover bg-center md:items-center">
+    <header className="flex  text-right  flex-row-reverse h-screen bg-no-repeat bg-cover bg-center md:items-center"
+      style={{ backgroundImage: "url(./images/hero-3.jpg)" }}>
       <div className=" bg-card text-white font-raleway p-4 max-w-[400px] md:rounded-l-lg max-h-[36%] md:max-h-[50%]">
         <h1 className="text-[32px] font-[100]">Cleide</h1>
         <h2 className=" font-title leading-[54px] text-[48px]">A ajuda que você Procura</h2>
@@ -17,3 +20,14 @@ export default function Hero() {
   )
 }
 //https://ponepaste.org/404
+/*
+
+
+    <header style={{
+      display: "flex",
+      textAlign: 'right',
+      backgroundImage: "url(./images/hero-3.jpg)"
+    }}>
+    
+     
+ */
