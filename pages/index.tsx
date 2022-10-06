@@ -9,10 +9,9 @@ import Servicos from '../components/Servicos'
 
 const Home: NextPage = () => {
   return (
-
-
     <div className="font-raleway">
-      <Hero />
+
+			<Hero />
       <QuemSouEu />
       <Depoimentos />
       <Blog />
